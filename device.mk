@@ -473,9 +473,6 @@ PRODUCT_PACKAGES += \
     libpng.vendor:32 \
     libwfdaac_vendor
 
-PRODUCT_BOOT_JARS += \
-    WfdCommon
-
 # WiFi firmware symlinks
 PRODUCT_PACKAGES += \
     firmware_wlan_mac.bin_symlink \
