@@ -81,6 +81,14 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             apktool_patch "${2}" "${MY_DIR}/blob-patches/PowerOffAlarm.patch" -s
             ;;
+        odm/lib64/mediadrm/libwvdrmengine.so)
+            [ "$2" = "" ] && return 0
+            grep -q libcrypto_shim.so "${2}" || "${PATCHELF}" --add-needed libcrypto_shim.so "${2}"
+            ;;
+        odm/lib64/libwvhidl.so)
+            [ "$2" = "" ] && return 0
+            grep -q libcrypto_shim.so "${2}" || "${PATCHELF}" --add-needed libcrypto_shim.so "${2}"
+            ;;
         product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml)
             [ "$2" = "" ] && return 0
             sed -i "s/\/my_product/\/product/" "${2}"
