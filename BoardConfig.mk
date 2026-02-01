@@ -100,9 +100,6 @@ TARGET_KERNEL_CONFIG := vendor/lito-perf_defconfig vendor/debugfs.config
 KERNEL_CC := CC=clang
 override KERNEL_TOOLCHAIN_PREFIX_arm := arm-linux-android-
 
-# Media
-TARGET_USES_ION := true
-
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := lito
