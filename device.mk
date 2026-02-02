@@ -270,6 +270,8 @@ PRODUCT_PACKAGES += \
     libavservices_minijail \
     libavservices_minijail.vendor
 
+$(call soong_config_set,stagefright,target_disable_thumbnail_block_model,true)
+
 # Net
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
